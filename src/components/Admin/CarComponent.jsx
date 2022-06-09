@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Card, CardTitle } from 'reactstrap';
+import { Card, CardTitle, Button } from 'reactstrap';
 import {FiTrash2, FiClock, FiEdit, FiKey} from 'react-icons/fi';
 import ModalImage from 'react-modal-image';
 
@@ -25,10 +25,15 @@ const CarComponent = ()  => {
                                 <CardTitle tag="h4"> Rp{product.price}/ hari</CardTitle>
                                 <p className='card-text'><FiKey/> {product.start_rent_at} - {product.finish_rent_at} </p>
                                 <p className='card-text'> <FiClock/> {product.updatedAt} </p>
-
-                                <a href="#" className="btn btn-outline-danger"><FiTrash2 />Delete</a>
-                                <a href="#" className="btn btn-success" ><FiEdit />Edit</a>
-                            </div>
+                                <Button color="outline-danger"
+                                    href="#"><FiTrash2 />
+                                    Delete
+                                </Button>
+                                <Button color="success"
+                                    href="#"><FiEdit />
+                                    Edit
+                                </Button>
+                                                            </div>
                         </Card>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 // import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
     Container, Row
 } from 'reactstrap';
@@ -9,7 +9,7 @@ import ProductComponent from "./ProductComponent";
 
 const ProductListing = () => {
     const products = useSelector((state) => state);
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
     /* const fetchProducts = async () => {
         const response = await axios
@@ -21,8 +21,8 @@ const ProductListing = () => {
     }; */
 
     useEffect(() => {
-        dispatch(fetchProducts());
-    }, [])
+        fetchProducts();
+    }, []);
 
     console.log("Products: ", products);
     return (

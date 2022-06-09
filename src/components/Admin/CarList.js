@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
     Container, Row
 } from 'reactstrap';
@@ -8,10 +8,10 @@ import CarComponent from './CarComponent';
 
 const CarList = () => {
     const products = useSelector((state) => state);
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchProducts());
+        fetchProducts();
     }, [])
 
     console.log("Products: ", products);

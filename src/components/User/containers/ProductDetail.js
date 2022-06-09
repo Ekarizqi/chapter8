@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 //import axios from 'axios';
-import {useDispatch, useSelector} from 'react-redux';
+import { useSelector} from 'react-redux';
 import {
     Row,Col, Card, CardBody, CardTitle, CardSubtitle,CardText, Button, Container
 } from 'reactstrap'
@@ -17,7 +17,7 @@ import ModalImage from 'react-modal-image';
 const ProductDetail = () => {
     const product = useSelector((state) => state.product);
     const {productId} = useParams();
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
     console.log(productId);
 
     /* const fetchProductDetail = async () => {
@@ -30,11 +30,11 @@ const ProductDetail = () => {
     };
  */
     useEffect(() =>{
-        if (productId && productId !== "") dispatch(fetchProductDetail(productId));
+        if (productId && productId !== "") (fetchProductDetail(productId));
         return () => {
-            dispatch(removeSelectedProducts());
+            removeSelectedProducts();
         }
-    }, []);
+    });
 
     return (
         <div >
